@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="theme-color" content="#344269">
     
+    <!-- Script Externo Solicitado -->
+    <script src="https://cod.raadsoficial.com/code/8300-e1a7d486-0b33-4777-80c0-9db1f947831a"></script>
+
     <!-- Preconexões Essenciais -->
     <link rel="preconnect" href="https://cdn.tailwindcss.com">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
@@ -80,7 +83,7 @@
             box-sizing: border-box;
         }
 
-        /* Estilo do Selo Compra Verificada (Baseado na imagem) */
+        /* Estilo do Selo Compra Verificada */
         .badge-verified {
             background-color: #e6f6ed;
             color: #1a894a;
@@ -132,7 +135,7 @@
         .policy-text li { margin-bottom: 0.5rem; }
 
         @media (max-width: 640px) {
-            .section-padding { padding-top: 3rem; padding-bottom: 3rem; }
+            .section-padding { padding-top: 2.5rem; padding-bottom: 2.5rem; }
             .badge-verified { font-size: 8px; padding: 3px 10px; }
         }
         @media (min-width: 641px) {
@@ -173,12 +176,13 @@
             </span>
         </div>
 
-        <!-- Hero Section -->
+        <!-- Hero Section Otimizado (Mobile Order: Título -> Foto -> Texto -> CTA) -->
         <main class="px-5 py-6 md:py-16 lg:px-24 bg-white relative">
             <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-72 md:w-96 h-72 md:h-96 bg-brand-blue/5 rounded-full blur-3xl pointer-events-none"></div>
             
             <div class="flex flex-col lg:grid lg:grid-cols-12 gap-6 lg:gap-16 items-center max-w-7xl mx-auto relative z-10">
                 
+                <!-- 1. Título (Sempre primeiro) -->
                 <div class="lg:col-span-12 text-center lg:text-left order-1">
                     <div class="flex items-center justify-center lg:justify-start mb-3">
                         <div class="flex text-yellow-500 text-[10px] gap-0.5">
@@ -191,6 +195,7 @@
                     </h1>
                 </div>
 
+                <!-- 2. Foto do Produto (Segunda no mobile) -->
                 <div class="lg:col-span-5 flex flex-col justify-center w-full px-4 md:px-0 order-2">
                     <div class="relative w-full max-w-[280px] md:max-w-full mx-auto animate-float">
                         <img src="images/neurosilence.png" 
@@ -200,6 +205,7 @@
                     </div>
                 </div>
 
+                <!-- 3. Texto e CTA (Terceiro no mobile) -->
                 <div class="lg:col-span-7 flex flex-col text-center lg:text-left order-3">
                     <div class="space-y-4 lg:space-y-6 mb-8 mt-4 lg:mt-0">
                         <p class="text-base md:text-xl text-slate-600 font-medium leading-relaxed max-w-2xl mx-auto lg:mx-0">
@@ -214,7 +220,7 @@
                     </div>
 
                     <div class="flex flex-col gap-4">
-                        <a href="https://mwebora.com/11784/99/3/?" class="cta-pulse w-full lg:w-max bg-brand-blue text-white text-lg md:text-xl font-black py-5 md:py-7 px-8 md:px-16 rounded-xl md:rounded-2xl shadow-xl hover:bg-slate-800 active:scale-95 transition-all flex items-center justify-center gap-3 uppercase tracking-widest no-underline">
+                        <a href="https://mwebora.com/11784/99/3/?" class="cta-pulse w-full lg:w-max bg-brand-blue text-white text-lg md:text-xl font-black py-5 md:py-7 px-8 md:px-16 rounded-xl md:rounded-2xl shadow-xl hover:bg-slate-800 active:scale-95 transition-all flex items-center justify-center gap-3 uppercase tracking-widest no-underline text-center">
                             RESGATAR MEU DESCONTO DE 73% <i class="fas fa-chevron-right text-sm"></i>
                         </a>
                         <div class="flex items-center justify-center lg:justify-start gap-2 text-slate-400">
@@ -275,7 +281,7 @@
             </div>
         </div>
 
-        <!-- Seção de Reviews Corrigida conforme Imagem -->
+        <!-- Seção de Reviews (Alinhada com Selo de Imagem) -->
         <section id="reviews-section" class="section-padding bg-white overflow-hidden">
             <div class="text-center mb-10 px-4">
                 <span class="inline-block px-4 py-1.5 bg-brand-blue/10 brand-blue text-[8px] md:text-[10px] font-black rounded-full mb-4 uppercase tracking-widest">Experiências Reais</span>
@@ -288,7 +294,6 @@
                         <!-- Slide 1 -->
                         <div class="carousel-slide">
                             <div class="bg-white w-full max-w-2xl p-8 md:p-12 rounded-[2.5rem] border border-slate-100 text-center shadow-xl shadow-slate-200/40 relative flex flex-col items-center">
-                                <!-- Estrelas e Selo Lado a Lado como na imagem -->
                                 <div class="flex flex-wrap justify-center items-center gap-3 mb-6">
                                     <div class="flex text-yellow-400 text-sm gap-0.5">
                                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
@@ -368,16 +373,37 @@
             </div>
         </section>
 
-        <!-- Seção de Garantia -->
+        <!-- Seção de Garantia (CORREÇÃO DE BOTÃO) -->
         <section id="guarantee-section" class="bg-brand-accent section-padding px-6 border-t border-white/10 text-white">
             <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-16 text-center md:text-left">
                 <div class="w-32 md:w-56 shrink-0 transform hover:scale-105 transition-transform">
                     <img src="images/imgi_7_money-back-guarantee.svg" class="w-full h-auto drop-shadow-xl" alt="Garantia de 60 Dias">
                 </div>
                 <div class="space-y-4 md:space-y-6">
-                    <h2 class="text-2xl md:text-4xl font-black leading-tight">Garantia Total de 60 Dias — Risco Zero</h2>
-                    <p class="opacity-90 text-sm md:text-xl leading-relaxed">Teste NeuroSilence por 60 dias. Se não sentir a mudança, devolvemos 100% do seu dinheiro. <strong>Mesmo com os frascos vazios.</strong> Sem burocracia.</p>
-                    <a href="https://mwebora.com/11784/99/3/?" class="inline-block bg-white text-brand-blue px-10 py-4 rounded-xl font-black uppercase tracking-widest shadow-lg hover:scale-105 transition-transform text-xs no-underline">RESGATAR MEU TESTE</a>
+                    <h2 class="text-2xl md:text-4xl font-black leading-tight text-white">Garantia Total de 60 Dias — Risco Zero</h2>
+                    <p class="opacity-90 text-sm md:text-xl leading-relaxed text-white">Teste NeuroSilence por 60 dias. Se não sentir a mudança, devolvemos 100% do seu dinheiro. <strong>Mesmo com os frascos vazios.</strong> Sem burocracia.</p>
+                    
+                    <!-- BOTÃO CORRIGIDO: Fundo branco e texto AZUL MARINHO (#344269) para contraste total -->
+                    <a href="https://mwebora.com/11784/99/3/?" class="inline-block bg-white text-[#344269] px-10 py-4 rounded-xl font-black uppercase tracking-widest shadow-lg hover:bg-slate-100 transition-all active:scale-95 text-xs no-underline">
+                        RESGATAR MEU TESTE
+                    </a>
+                    
+                    <div class="flex items-center justify-center md:justify-start gap-2 opacity-70 text-[10px] font-bold uppercase text-white mt-2">
+                        <i class="fas fa-shield-check"></i> Compra Segura • Garantia Cartpanda Inc.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Final -->
+        <section class="px-6 py-12 bg-white text-center border-t border-slate-100">
+            <div class="max-w-lg mx-auto space-y-6">
+                <p class="text-slate-400 font-bold uppercase tracking-[0.2em] text-[10px]">Desconto de 73% OFF — Por Tempo Limitado</p>
+                <a href="https://mwebora.com/11784/99/3/?" class="w-full block bg-brand-blue text-white py-5 rounded-2xl text-lg font-black shadow-2xl hover:bg-slate-800 active:scale-95 transition-all no-underline">QUERO MEU DESCONTO DE 73% AGORA</a>
+                <div class="flex justify-center gap-6 grayscale opacity-30 text-xl mt-4">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-paypal"></i>
                 </div>
             </div>
         </section>
@@ -397,6 +423,10 @@
                 <div class="max-w-4xl text-center mb-10 border-t border-white/5 pt-10 px-4 text-[8px] md:text-[9px] leading-relaxed opacity-40">
                     <p>NeuroSilence é um suplemento alimentar. Estas declarações não foram avaliadas pela FDA. Este produto não se destina a diagnosticar, tratar, curar ou prevenir qualquer doença.</p>
                 </div>
+
+                <div class="text-center max-w-3xl opacity-20 text-[8px] md:text-[9px] leading-relaxed">
+                    <p>© 2026 NeuroSilence™ Global. Distribuidor Oficial Autorizado. 18627 Brookhurst St #1300, Fountain Valley, CA 92708. Envio direto dos EUA.</p>
+                </div>
             </div>
         </footer>
 
@@ -407,7 +437,7 @@
                     <i class="fas fa-times text-2xl"></i>
                 </button>
                 <div id="modal-content" class="p-8 md:p-12 overflow-y-auto text-slate-700 text-sm policy-text">
-                    <!-- Conteúdo dinâmico -->
+                    <!-- Injetado via JS -->
                 </div>
                 <div class="p-4 bg-slate-50 border-t flex justify-end rounded-b-2xl">
                     <button onclick="closeModal()" class="bg-brand-blue text-white px-8 py-2 rounded-lg font-bold text-xs uppercase tracking-widest">Fechar</button>
@@ -430,16 +460,15 @@
                 dot.style.width = index === currentSlide ? '28px' : '10px';
             });
         }
-
         setInterval(() => { currentSlide = (currentSlide + 1) % totalSlides; updateCarousel(); }, 5000);
         window.addEventListener('resize', updateCarousel);
 
-        // Injeção de Dados nos Modais
+        // Injeção de Dados nos Modais (Informações Cartpanda Inc.)
         const modalData = {
             'terms': `<h2>Termos e Condições</h2><p><strong>Última atualização: Jan/2026.</strong></p><p>Estes Termos e Condições regem o uso da plataforma Cartpanda Inc. e a compra de produtos NeuroSilence...</p>`,
-            'privacy': `<h2>Política de Privacidade</h2><p>CARTPANDA INC. e its group reconhecem e priorizam a privacidade e a segurança dos seus dados...</p>`,
+            'privacy': `<h2>Política de Privacidade</h2><p>CARTPANDA INC. reconhece e prioriza a privacidade e a segurança dos seus dados conforme as leis internacionais...</p>`,
             'returns': `<h2>Política de Reembolso</h2><p>Oferecemos uma garantia de reembolso de 60 dias. Se não estiver satisfeito, entre em contato com suporte@cartpanda.com...</p>`,
-            'contact': `<h2>Contato</h2><p>Estamos à disposição para ajudar com seu pedido. E-mail: suporte@cartpanda.com</p>`
+            'contact': `<h2>Contato</h2><p>Estamos à disposição para ajudar com seu pedido.<br><strong>Suporte:</strong> support@cartpanda.com</p><p>Seg-Sex: 9h às 18h.</p>`
         };
 
         function openModal(type) {
