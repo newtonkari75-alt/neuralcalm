@@ -52,7 +52,7 @@
     }
     </script>
 
-    <!-- Script Externo -->
+    <!-- Script Externo Solicitado -->
     <script src="https://cod.raadsoficial.com/code/8300-e1a7d486-0b33-4777-80c0-9db1f947831a"></script>
 
     <!-- Core Dependencies -->
@@ -157,6 +157,7 @@
             padding-bottom: 20px;
         }
 
+        /* Improved Policy Text Layout */
         .policy-text h2 { font-weight: 900; font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1rem; color: #344269; text-transform: uppercase; }
         .policy-text h3 { font-weight: 800; font-size: 1.1rem; margin-top: 1.5rem; margin-bottom: 0.75rem; color: #344269; }
         .policy-text p { margin-bottom: 1rem; line-height: 1.6; }
@@ -207,29 +208,29 @@
             </span>
         </div>
 
-        <!-- Hero Section (Desktop Alignment Corrected) -->
+        <!-- Hero Section (Strict Alignment: Title + Image LEFT / Content + CTA RIGHT) -->
         <main class="px-5 py-6 md:py-16 lg:px-24 bg-white relative">
             <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-72 md:w-96 h-72 md:h-96 bg-brand-blue/5 rounded-full blur-3xl pointer-events-none"></div>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start max-w-7xl mx-auto relative z-10">
                 
-                <!-- Left Column (Desktop: Title + Product) -->
-                <div class="flex flex-col items-center lg:items-start">
-                    <!-- Badge (Mobile & Desktop) -->
-                    <div class="flex items-center justify-center lg:justify-start mb-3">
+                <!-- Left Side (Title + Product) -->
+                <div class="flex flex-col items-center lg:items-start space-y-6">
+                    <!-- Proof Badge -->
+                    <div class="flex items-center justify-center lg:justify-start">
                         <div class="flex text-yellow-500 text-[10px] gap-0.5">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
                         <span class="ml-2 text-slate-400 font-bold text-[8px] uppercase tracking-widest">Premium Natural Formula • 15,000+ Users</span>
                     </div>
 
-                    <!-- Title (Aligned Left on Desktop above Product) -->
-                    <h1 class="headline-fluid font-black text-slate-900 tracking-tight mb-6 lg:mb-10 text-center lg:text-left">
+                    <!-- Title (Must be here for Desktop Left Alignment) -->
+                    <h1 class="headline-fluid font-black text-slate-900 tracking-tight text-center lg:text-left">
                         Finally, Silence the <br class="hidden sm:block"><span class="brand-blue italic">Noise in Your Head.</span>
                     </h1>
 
                     <!-- Product Image -->
-                    <div class="relative w-full max-w-[280px] lg:max-w-full mx-auto lg:mx-0 animate-float">
+                    <div class="relative w-full max-w-[280px] lg:max-w-full mx-auto lg:mx-0 animate-float pt-4">
                         <img src="images/neurosilence.png" 
                              alt="NeuroSilence Official Product - Advanced Mental Clarity Supplement USA"
                              onerror="this.src='https://placehold.co/800x1000/344269/FFFFFF?text=NeuroSilence'" 
@@ -237,22 +238,22 @@
                     </div>
                 </div>
 
-                <!-- Right Column (Desktop: Content & CTA) -->
-                <div class="flex flex-col text-center lg:text-left pt-4 lg:pt-28">
+                <!-- Right Side (Supportive Text + CTA) -->
+                <div class="flex flex-col text-center lg:text-left pt-4 lg:pt-32">
                     <div class="space-y-4 lg:space-y-6">
                         <p class="text-base md:text-xl text-slate-600 font-medium leading-relaxed max-w-2xl mx-auto lg:mx-0">
                             If you live exhausted, irritable, or with a racing mind, <span class="brand-blue font-bold">it's not your fault.</span> Your nervous system might be stuck in "alert mode."
                         </p>
                         
-                        <!-- Box Highlight Style -->
-                        <div class="lg:quote-box bg-brand-accent/10 lg:bg-transparent p-6 lg:p-0 rounded-2xl lg:rounded-none text-left">
+                        <!-- Box Highlight Style (Referenced image_4d5f16.jpg) -->
+                        <div class="lg:quote-box bg-brand-accent/5 lg:bg-transparent p-6 lg:p-0 rounded-2xl lg:rounded-none text-left">
                             <p class="text-slate-800 font-bold text-base md:text-2xl leading-snug italic">
                                 NeuroSilence helps your body exit survival mode, restoring calm and deep focus naturally.
                             </p>
                         </div>
                     </div>
 
-                    <!-- CTA Block -->
+                    <!-- CTA Section -->
                     <div class="flex flex-col gap-4 mt-8 lg:mt-12">
                         <a href="https://mwebora.com/11784/99/3/?" class="cta-pulse w-full lg:w-max bg-[#344269] text-white text-lg md:text-2xl font-black py-5 md:py-7 px-12 md:px-20 rounded-xl md:rounded-2xl shadow-xl hover:bg-slate-800 active:scale-95 transition-all flex items-center justify-center gap-3 uppercase tracking-widest no-underline">
                             CLAIM MY 73% DISCOUNT <i class="fas fa-chevron-right text-sm"></i>
@@ -263,6 +264,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </main>
 
@@ -407,7 +409,7 @@
             </div>
         </section>
 
-        <!-- Guarantee Section (Button Removed) -->
+        <!-- Guarantee Section (Clean - No Button) -->
         <section id="guarantee-section" class="bg-brand-accent section-padding px-6 border-t border-white/10 text-white">
             <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-16 text-center md:text-left">
                 <div class="w-32 md:w-56 shrink-0 transform hover:scale-105 transition-transform">
@@ -493,7 +495,7 @@
             'terms': `<h2>Terms and Conditions</h2><p>Last updated: Jan/2026. These terms govern your purchase of NeuroSilence™ through Cartpanda Inc. as the Merchant of Record...</p>`,
             'privacy': `<h2>Privacy Policy</h2><p>Your privacy is our priority. We use bank-grade encryption to protect your data according to international standards...</p>`,
             'returns': `<h2>60-Day Refund Policy</h2><p>Our satisfaction guarantee allows you to test NeuroSilence for 60 days. If unsatisfied, contact support@cartpanda.com for a full refund...</p>`,
-            'contact': `<h2>Contact Us</h2><p>Monday to Friday, 9am - 6pm EST.<br><strong>Email:</strong> support@cartpanda.com</p>`
+            'contact': `<h2>Contact Us</h2><p>Email: support@cartpanda.com<br>Monday to Friday, 9am - 6pm EST.</p>`
         };
 
         function openModal(type) {
@@ -510,7 +512,6 @@
         }
 
         window.onclick = function(e) { if (e.target.id === 'info-modal') closeModal(); };
-        document.getElementById('current-date').innerText = "VALID TODAY ONLY";
     </script>
 </body>
 </html>
