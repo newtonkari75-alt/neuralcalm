@@ -12,8 +12,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <title>NeuroSilence™ | Suporte Avançado para Clareza Mental (46% OFF)</title>
-    <meta name="description" content="Experimente o poder de NeuroSilence™. Fórmula avançada para silenciar o ruído interno e restaurar o equilíbrio. Garantia de 60 dias.">
+    <title>NeuroSilence™ | Suporte Avançado para Clareza Mental (73% OFF)</title>
+    <meta name="description" content="Experimente o poder de NeuroSilence™. Fórmula avançada para silenciar o ruído interno e restaurar o equilíbrio. Garantia de 60 dias. Agora com 73% de desconto.">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -24,6 +24,7 @@
             font-family: 'Inter', sans-serif; 
             overflow-x: hidden;
             background-color: #f8fafc;
+            -webkit-tap-highlight-color: transparent;
         }
         
         .brand-blue { color: #344269; }
@@ -31,8 +32,8 @@
         .bg-brand-accent { background-color: #678FD3; }
         
         .headline-fluid {
-            font-size: clamp(2.25rem, 6vw, 4rem);
-            line-height: 1.05;
+            font-size: clamp(1.75rem, 8vw, 3.5rem);
+            line-height: 1.1;
         }
 
         .cta-pulse {
@@ -51,7 +52,7 @@
 
         @keyframes float {
             0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+            50% { transform: translateY(-15px); }
             100% { transform: translateY(0px); }
         }
 
@@ -63,13 +64,20 @@
         }
         .carousel-track {
             display: flex;
-            transition: transform 0.5s ease-in-out;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
             width: 100%;
         }
         .carousel-slide {
             min-width: 100%;
             flex-shrink: 0;
-            padding: 0 1rem;
+            padding: 0 0.5rem;
+        }
+
+        @media (max-width: 640px) {
+            .section-padding { padding-top: 3rem; padding-bottom: 3rem; }
+        }
+        @media (min-width: 641px) {
+            .section-padding { padding-top: 5rem; padding-bottom: 5rem; }
         }
     </style>
 </head>
@@ -79,336 +87,287 @@
     <div class="max-w-[1440px] mx-auto bg-white shadow-2xl relative overflow-hidden">
         
         <!-- Barra de Anúncio -->
-        <div class="bg-brand-accent py-2.5 border-b border-white/10">
-            <div class="flex justify-center items-center gap-6 md:gap-16 px-4">
+        <div class="bg-brand-accent py-2 border-b border-white/10">
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-1 sm:gap-16 px-4">
                 <div class="flex items-center gap-2">
-                    <i class="fas fa-truck text-[10px] text-white"></i>
-                    <span class="text-[9px] sm:text-[10px] font-extrabold text-white uppercase tracking-[0.15em]">Frete Grátis em Pedidos Selecionados</span>
+                    <i class="fas fa-truck text-[9px] text-white"></i>
+                    <span class="text-[8px] sm:text-[10px] font-extrabold text-white uppercase tracking-wider">Frete Grátis Selecionado</span>
                 </div>
-                <div class="w-px h-3 bg-white/30"></div>
+                <div class="hidden sm:block w-px h-3 bg-white/30"></div>
                 <div class="flex items-center gap-2">
-                    <i class="fas fa-shield-check text-[10px] text-white"></i>
-                    <span class="text-[9px] sm:text-[10px] font-extrabold text-white uppercase tracking-[0.15em]">Garantia Total de 60 Dias</span>
+                    <i class="fas fa-shield-check text-[9px] text-white"></i>
+                    <span class="text-[8px] sm:text-[10px] font-extrabold text-white uppercase tracking-wider">Garantia de 60 Dias</span>
                 </div>
             </div>
         </div>
 
         <!-- Cabeçalho (Apenas Texto) -->
-        <header class="py-5 px-5 md:px-8 bg-brand-blue flex justify-center sticky top-0 z-50 shadow-md">
-            <div class="cursor-pointer transform hover:scale-105 transition-transform" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-                <span class="text-white text-2xl md:text-3xl font-black tracking-tighter uppercase italic">NeuroSilence™</span>
+        <header class="py-4 px-5 bg-brand-blue flex justify-center sticky top-0 z-50 shadow-md">
+            <div class="cursor-pointer transition-transform active:scale-95" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                <span class="text-white text-xl md:text-3xl font-black tracking-tighter uppercase italic">NeuroSilence™</span>
             </div>
         </header>
 
-        <!-- Faixa de Oferta -->
-        <div class="bg-white text-brand-blue text-center py-2.5 px-2 w-full border-b border-slate-100">
-            <span class="text-[9px] sm:text-[11px] font-black uppercase tracking-[0.25em]">
-                ⚡ Flash Sale: 46% OFF — SOMENTE ATÉ <span id="current-date" class="border-b-2 border-[#344269]/20">09 DE FEVEREIRO DE 2026</span>
+        <!-- Faixa de Oferta (Atualizada para 73%) -->
+        <div class="bg-white text-brand-blue text-center py-2 px-2 w-full border-b border-slate-100">
+            <span class="text-[9px] sm:text-[11px] font-black uppercase tracking-[0.15em]">
+                ⚡ Flash Sale: 73% OFF — VÁLIDO ATÉ <span id="current-date" class="border-b-2 border-[#344269]/20">09 DE FEVEREIRO DE 2026</span>
             </span>
         </div>
 
         <!-- Hero Section -->
-        <main class="px-5 py-8 lg:px-24 lg:py-20 bg-white relative">
-            <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-96 h-96 bg-brand-blue/5 rounded-full blur-3xl"></div>
+        <main class="px-5 py-8 md:py-16 lg:px-24 bg-white relative">
+            <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-72 md:w-96 h-72 md:h-96 bg-brand-blue/5 rounded-full blur-3xl pointer-events-none"></div>
             
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-24 items-center max-w-7xl mx-auto relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center max-w-7xl mx-auto relative z-10">
                 
-                <!-- Título Mobile -->
-                <h1 class="lg:hidden text-3xl font-black text-center text-slate-900 leading-[1.1] tracking-tight">
-                    Finalmente, Desligue o <span class="brand-blue italic">Barulho Dentro da Sua Cabeça.</span>
-                </h1>
-
-                <!-- Foto do Produto -->
-                <div class="lg:col-span-5 flex flex-col justify-center">
-                    <div class="relative w-full aspect-square md:aspect-[4/5] animate-float">
-                        <img src="images/neurosilence.png" 
-                             onerror="this.src='https://placehold.co/800x1000/344269/FFFFFF?text=NeuroSilence'" 
-                             class="w-full h-full object-contain drop-shadow-[0_35px_35px_rgba(0,0,0,0.15)]" 
-                             alt="NeuroSilence Product">
-                    </div>
-                </div>
-
                 <!-- Conteúdo Hero -->
-                <div class="lg:col-span-7 flex flex-col text-center lg:text-left">
-                    <div class="flex items-center justify-center lg:justify-start mb-6">
-                        <div class="flex text-yellow-500 text-xs gap-1">
+                <div class="lg:col-span-7 flex flex-col text-center lg:text-left order-1 lg:order-2">
+                    <div class="flex items-center justify-center lg:justify-start mb-4">
+                        <div class="flex text-yellow-500 text-[10px] gap-0.5">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
-                        <span class="ml-3 text-slate-400 font-bold text-[9px] uppercase tracking-[0.2em]">Fórmula Natural Premium • 15.000+ Usuários</span>
+                        <span class="ml-2 text-slate-400 font-bold text-[8px] uppercase tracking-widest">15.000+ Usuários</span>
                     </div>
 
-                    <h1 class="hidden lg:block headline-fluid font-black text-slate-900 tracking-tight mb-8">
-                        Finalmente, Desligue o <br><span class="brand-blue italic">Barulho Dentro da Sua Cabeça.</span>
+                    <h1 class="headline-fluid font-black text-slate-900 tracking-tight mb-6">
+                        Finalmente, Desligue o <br class="hidden sm:block"><span class="brand-blue italic">Barulho na Cabeça.</span>
                     </h1>
 
-                    <div class="space-y-6 lg:space-y-8 mb-10">
-                        <p class="text-lg md:text-xl text-slate-600 font-medium leading-relaxed max-w-2xl text-balance">
-                            Se você vive cansado... irritado sem motivo... com a mente acelerada... ou com aquele zumbido interno que nunca some, <span class="brand-blue font-bold">isso não é fraqueza.</span>
+                    <div class="space-y-4 lg:space-y-6 mb-8">
+                        <p class="text-base md:text-xl text-slate-600 font-medium leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                            Se você vive cansado, irritado ou com a mente acelerada, <span class="brand-blue font-bold">isso não é fraqueza.</span> Seu sistema nervoso pode estar preso em modo de alerta.
                         </p>
                         
-                        <div class="bg-brand-accent/20 border-l-[6px] border-[#344269] p-6 lg:p-8 rounded-r-3xl transform transition-all hover:translate-x-1">
-                            <p class="text-slate-800 font-bold text-lg lg:text-2xl leading-snug italic">
-                                NeuroSilence ajuda seu corpo a sair do modo sobrevivência, acalmando a atividade cerebral excessiva e restaurando a clareza mental.
+                        <div class="bg-brand-accent/10 border-l-[4px] md:border-l-[6px] border-[#344269] p-4 md:p-8 rounded-r-2xl text-left">
+                            <p class="text-slate-800 font-bold text-base md:text-2xl leading-snug italic">
+                                NeuroSilence ajuda seu corpo a sair do modo sobrevivência, restaurando a calma e o foco.
                             </p>
                         </div>
                     </div>
 
-                    <div class="flex flex-col gap-5">
-                        <a href="https://mwebora.com/11784/99/3/?" class="cta-pulse w-full lg:w-max bg-brand-blue text-white text-xl font-black py-6 lg:py-7 px-16 rounded-2xl shadow-xl hover:bg-slate-800 hover:-translate-y-1 active:scale-95 transition-all flex items-center justify-center gap-5 uppercase tracking-widest no-underline">
-                            👉 RESGATE MEU DESCONTO DE 46% <i class="fas fa-chevron-right text-sm"></i>
+                    <!-- CTA Principal (Atualizada para 73%) -->
+                    <div class="flex flex-col gap-4">
+                        <a href="https://mwebora.com/11784/99/3/?" class="cta-pulse w-full lg:w-max bg-brand-blue text-white text-lg md:text-xl font-black py-5 md:py-7 px-8 md:px-16 rounded-xl md:rounded-2xl shadow-xl hover:bg-slate-800 active:scale-95 transition-all flex items-center justify-center gap-3 uppercase tracking-widest no-underline">
+                            RESGATAR MEU DESCONTO DE 73% <i class="fas fa-chevron-right text-sm"></i>
                         </a>
+                        <div class="flex items-center justify-center lg:justify-start gap-2 text-slate-400">
+                            <i class="fas fa-shield-lock text-[10px]"></i>
+                            <p class="text-[8px] font-bold uppercase tracking-widest">Pagamento 100% Seguro</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto do Produto -->
+                <div class="lg:col-span-5 flex flex-col justify-center order-2 lg:order-1 px-4 md:px-0">
+                    <div class="relative w-full max-w-[320px] md:max-w-full mx-auto animate-float">
+                        <img src="images/neurosilence.png" 
+                             onerror="this.src='https://placehold.co/800x1000/344269/FFFFFF?text=NeuroSilence'" 
+                             class="w-full h-auto drop-shadow-2xl" 
+                             alt="NeuroSilence Product">
                     </div>
                 </div>
             </div>
         </main>
 
         <!-- Seção de Dor e Alerta -->
-        <section class="bg-slate-50 py-16 px-6 lg:px-24">
-            <div class="max-w-4xl mx-auto text-center space-y-8">
-                <h2 class="text-2xl md:text-4xl font-black text-slate-900 uppercase">Você não está sozinho.</h2>
-                <p class="text-lg text-slate-600">Milhões de adultos vivem com a mente sobrecarregada, tensão constante e um ruído interno que nunca silencia. Muitos acham que é "normal da idade". <strong>Não é.</strong></p>
+        <section class="bg-slate-50 section-padding px-6 lg:px-24">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-xl md:text-4xl font-black text-slate-900 uppercase mb-6">Você não está sozinho.</h2>
+                <p class="text-base md:text-lg text-slate-600 mb-8">Milhões de adultos vivem com a mente sobrecarregada. Muitos acham que é "normal". <strong>Não é.</strong></p>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left pt-6">
-                    <ul class="space-y-4">
-                        <li class="flex items-center gap-3 font-bold text-slate-700"><i class="fas fa-times-circle text-red-500"></i> Mente sobrecarregada</li>
-                        <li class="flex items-center gap-3 font-bold text-slate-700"><i class="fas fa-times-circle text-red-500"></i> Tensão constante</li>
-                        <li class="flex items-center gap-3 font-bold text-slate-700"><i class="fas fa-times-circle text-red-500"></i> Dificuldade de concentração</li>
-                    </ul>
-                    <ul class="space-y-4">
-                        <li class="flex items-center gap-3 font-bold text-slate-700"><i class="fas fa-times-circle text-red-500"></i> Sensação de esgotamento</li>
-                        <li class="flex items-center gap-3 font-bold text-slate-700"><i class="fas fa-times-circle text-red-500"></i> Ruído interno persistente</li>
-                        <li class="flex items-center gap-3 font-bold text-slate-700"><i class="fas fa-times-circle text-red-500"></i> Irritabilidade sem motivo</li>
-                    </ul>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left max-w-2xl mx-auto">
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3 p-3 bg-white rounded-xl shadow-sm border border-slate-100">
+                            <i class="fas fa-times-circle text-red-500 text-sm"></i>
+                            <span class="text-xs md:text-sm font-bold text-slate-700">Mente sobrecarregada</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-white rounded-xl shadow-sm border border-slate-100">
+                            <i class="fas fa-times-circle text-red-500 text-sm"></i>
+                            <span class="text-xs md:text-sm font-bold text-slate-700">Tensão constante</span>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3 p-3 bg-white rounded-xl shadow-sm border border-slate-100">
+                            <i class="fas fa-times-circle text-red-500 text-sm"></i>
+                            <span class="text-xs md:text-sm font-bold text-slate-700">Sensação de esgotamento</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-white rounded-xl shadow-sm border border-slate-100">
+                            <i class="fas fa-times-circle text-red-500 text-sm"></i>
+                            <span class="text-xs md:text-sm font-bold text-slate-700">Ruído interno persistente</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Benefícios com Ícones -->
-        <div class="flex w-full bg-brand-blue py-10 shadow-xl relative z-10 border-t border-white/10">
-            <div class="max-w-7xl mx-auto w-full flex flex-wrap justify-around items-center px-4 gap-8">
-                <div class="flex flex-col items-center gap-3 text-center w-full md:w-auto">
-                    <div class="bg-white p-3 rounded-full shadow-sm">
-                        <i class="fas fa-check brand-blue text-lg"></i>
-                    </div>
-                    <span class="text-[10px] md:text-[12px] font-black text-white uppercase tracking-[0.2em]">Apoia Foco e Estabilidade</span>
+        <!-- Benefícios Strip -->
+        <div class="bg-brand-blue py-8">
+            <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="flex items-center justify-center md:justify-center gap-4 text-white">
+                    <i class="fas fa-brain text-xl opacity-50"></i>
+                    <span class="text-[10px] md:text-xs font-black uppercase tracking-widest">Restaura Clareza</span>
                 </div>
-                <div class="flex flex-col items-center gap-3 text-center w-full md:w-auto">
-                    <div class="bg-white p-3 rounded-full shadow-sm">
-                        <i class="fas fa-check brand-blue text-lg"></i>
-                    </div>
-                    <span class="text-[10px] md:text-[12px] font-black text-white uppercase tracking-[0.2em]">Restaura Clareza Mental</span>
+                <div class="flex items-center justify-center md:justify-center gap-4 text-white border-y md:border-y-0 md:border-x border-white/10 py-4 md:py-0">
+                    <i class="fas fa-moon text-xl opacity-50"></i>
+                    <span class="text-[10px] md:text-xs font-black uppercase tracking-widest">Sono Reparador</span>
                 </div>
-                <div class="flex flex-col items-center gap-3 text-center w-full md:w-auto">
-                    <div class="bg-white p-3 rounded-full shadow-sm">
-                        <i class="fas fa-check brand-blue text-lg"></i>
-                    </div>
-                    <span class="text-[10px] md:text-[12px] font-black text-white uppercase tracking-[0.2em]">Profunda Sensação de Calma</span>
+                <div class="flex items-center justify-center md:justify-center gap-4 text-white">
+                    <i class="fas fa-leaf text-xl opacity-50"></i>
+                    <span class="text-[10px] md:text-xs font-black uppercase tracking-widest">100% Natural</span>
                 </div>
             </div>
         </div>
 
         <!-- Seção de Reviews -->
-        <section id="reviews-section" class="px-4 py-20 lg:py-28 bg-white overflow-hidden">
-            <div class="text-center mb-16 max-w-4xl mx-auto px-4">
-                <span class="inline-block px-5 py-2 bg-brand-blue/10 brand-blue text-[10px] font-black rounded-full mb-6 uppercase tracking-[0.4em]">Experiências Reais</span>
-                <h2 class="text-3xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight">Veja o que nossa comunidade diz</h2>
+        <section id="reviews-section" class="section-padding bg-white">
+            <div class="text-center mb-10 px-4">
+                <span class="inline-block px-4 py-1.5 bg-brand-blue/10 brand-blue text-[8px] md:text-[10px] font-black rounded-full mb-4 uppercase tracking-widest">Depoimentos Reais</span>
+                <h2 class="text-2xl md:text-4xl font-black text-slate-900 tracking-tight">O que dizem os usuários</h2>
             </div>
 
-            <div class="carousel-container max-w-4xl mx-auto">
+            <div class="carousel-container max-w-3xl mx-auto px-4">
                 <div class="carousel-track" id="carouselTrack">
-                    <!-- Slides de Depoimentos -->
                     <div class="carousel-slide">
-                        <div class="bg-slate-50 p-8 md:p-12 rounded-[2.5rem] border border-slate-100 text-center shadow-sm">
-                            <div class="flex justify-center text-yellow-500 mb-6 gap-1">
+                        <div class="bg-slate-50 p-6 md:p-10 rounded-3xl border border-slate-100 text-center">
+                            <div class="flex justify-center text-yellow-500 mb-4 text-xs">
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>
-                            <p class="text-xl md:text-2xl font-medium text-slate-700 leading-relaxed italic mb-8">“Finalmente encontrei algo que realmente funciona. A névoa mental sumiu e sinto uma calma profunda o dia inteiro.”</p>
-                            <div class="font-black brand-blue uppercase tracking-widest text-sm">— Sarah M.</div>
+                            <p class="text-base md:text-xl font-medium text-slate-700 italic mb-6">“Finalmente encontrei algo que realmente funciona. A névoa mental sumiu e sinto uma calma profunda o dia inteiro.”</p>
+                            <div class="font-bold brand-blue text-[10px] uppercase tracking-widest">— Sarah M.</div>
                         </div>
                     </div>
                     <div class="carousel-slide">
-                        <div class="bg-slate-50 p-8 md:p-12 rounded-[2.5rem] border border-slate-100 text-center shadow-sm">
-                            <div class="flex justify-center text-yellow-500 mb-6 gap-1">
+                        <div class="bg-slate-50 p-6 md:p-10 rounded-3xl border border-slate-100 text-center">
+                            <div class="flex justify-center text-yellow-500 mb-4 text-xs">
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>
-                            <p class="text-xl md:text-2xl font-medium text-slate-700 leading-relaxed italic mb-8">“Minha produtividade praticamente dobrou. Consigo focar sem aquele barulho constante na cabeça.”</p>
-                            <div class="font-black brand-blue uppercase tracking-widest text-sm">— David K.</div>
-                        </div>
-                    </div>
-                    <div class="carousel-slide">
-                        <div class="bg-slate-50 p-8 md:p-12 rounded-[2.5rem] border border-slate-100 text-center shadow-sm">
-                            <div class="flex justify-center text-yellow-500 mb-6 gap-1">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            </div>
-                            <p class="text-xl md:text-2xl font-medium text-slate-700 leading-relaxed italic mb-8">“Depois de duas semanas, parecia que alguém abaixou o volume do meu estresse.”</p>
-                            <div class="font-black brand-blue uppercase tracking-widest text-sm">— Elena R.</div>
-                        </div>
-                    </div>
-                    <div class="carousel-slide">
-                        <div class="bg-slate-50 p-8 md:p-12 rounded-[2.5rem] border border-slate-100 text-center shadow-sm">
-                            <div class="flex justify-center text-yellow-500 mb-6 gap-1">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            </div>
-                            <p class="text-xl md:text-2xl font-medium text-slate-700 leading-relaxed italic mb-8">“Natural, eficaz e sem efeitos colaterais. Virou parte da minha rotina diária.”</p>
-                            <div class="font-black brand-blue uppercase tracking-widest text-sm">— Marcus J.</div>
-                        </div>
-                    </div>
-                    <div class="carousel-slide">
-                        <div class="bg-slate-50 p-8 md:p-12 rounded-[2.5rem] border border-slate-100 text-center shadow-sm">
-                            <div class="flex justify-center text-yellow-500 mb-6 gap-1">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            </div>
-                            <p class="text-xl md:text-2xl font-medium text-slate-700 leading-relaxed italic mb-8">“A melhor decisão que tomei pela minha saúde mental este ano.”</p>
-                            <div class="font-black brand-blue uppercase tracking-widest text-sm">— Sofia L.</div>
+                            <p class="text-base md:text-xl font-medium text-slate-700 italic mb-6">“Minha produtividade praticamente dobrou. Consigo focar sem aquele barulho constante na cabeça.”</p>
+                            <div class="font-bold brand-blue text-[10px] uppercase tracking-widest">— David K.</div>
                         </div>
                     </div>
                 </div>
-                <div class="flex justify-center mt-10 gap-3" id="carouselDots">
-                    <div class="w-2.5 h-2.5 rounded-full bg-brand-blue/20 transition-all duration-300"></div>
-                    <div class="w-2.5 h-2.5 rounded-full bg-brand-blue/20 transition-all duration-300"></div>
-                    <div class="w-2.5 h-2.5 rounded-full bg-brand-blue/20 transition-all duration-300"></div>
-                    <div class="w-2.5 h-2.5 rounded-full bg-brand-blue/20 transition-all duration-300"></div>
-                    <div class="w-2.5 h-2.5 rounded-full bg-brand-blue/20 transition-all duration-300"></div>
+                <div class="flex justify-center mt-6 gap-2" id="carouselDots">
+                    <div class="w-2 h-2 rounded-full bg-brand-blue/20 transition-all"></div>
+                    <div class="w-2 h-2 rounded-full bg-brand-blue/20 transition-all"></div>
                 </div>
             </div>
         </section>
 
         <!-- Seção de Garantia -->
-        <section id="guarantee-section" class="bg-brand-accent py-20 px-6 border-t border-white/10 relative">
-            <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-12 text-center md:text-left">
-                <div class="w-44 md:w-56 shrink-0 transform hover:scale-110 transition-transform duration-500">
+        <section id="guarantee-section" class="bg-brand-accent section-padding px-6 border-t border-white/10">
+            <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-16 text-center md:text-left">
+                <div class="w-32 md:w-56 shrink-0 transform hover:scale-105 transition-transform duration-500">
                     <img src="images/imgi_7_money-back-guarantee.svg" 
-                         onerror="this.src='https://placehold.co/200/FFFFFF/344269?text=60+DIAS+DE+GARANTIA'" 
-                         class="w-full h-auto drop-shadow-2xl" 
-                         alt="Selo de Garantia de 60 Dias">
+                         onerror="this.src='https://placehold.co/200/FFFFFF/344269?text=GUARANTEE'" 
+                         class="w-full h-auto drop-shadow-xl" 
+                         alt="Garantia de 60 Dias">
                 </div>
-                <div class="space-y-6">
-                    <h2 class="text-3xl md:text-4xl font-black text-white leading-tight">Garantia Total de 60 Dias — <br class="hidden md:block">Risco Zero</h2>
-                    <p class="text-white/90 text-lg md:text-xl leading-relaxed">Teste NeuroSilence por 60 dias completos. Se você não sentir uma mudança real na sua clareza mental, calma diária e bem-estar geral, devolvemos 100% do seu dinheiro. <strong>Mesmo com os frascos vazios.</strong> Sem perguntas, sem estresse.</p>
+                <div class="space-y-4 md:space-y-6">
+                    <h2 class="text-2xl md:text-4xl font-black text-white leading-tight">Garantia Total de 60 Dias — Risco Zero</h2>
+                    <p class="text-white/90 text-base md:text-xl leading-relaxed">Teste NeuroSilence por 60 dias. Se não sentir a mudança, devolvemos 100% do seu dinheiro. <strong>Mesmo com os frascos vazios.</strong></p>
                     
-                    <div class="flex flex-col sm:flex-row gap-8 pt-4 items-center md:items-start">
-                        <a href="https://mwebora.com/11784/99/3/?" class="bg-white text-brand-blue px-10 py-4 rounded-xl font-black uppercase tracking-widest shadow-xl hover:bg-slate-100 transition-all active:scale-95 text-xs no-underline">RESGATAR MEU TESTE</a>
-                        <div class="flex items-center gap-2 text-white/70">
-                            <i class="fas fa-shield-check"></i>
-                            <span class="text-[10px] font-bold uppercase tracking-widest">Compra 100% Segura</span>
+                    <div class="flex flex-col sm:flex-row gap-4 pt-2 items-center md:items-start">
+                        <a href="https://mwebora.com/11784/99/3/?" class="w-full sm:w-auto bg-white text-brand-blue px-10 py-4 rounded-xl font-black uppercase tracking-widest shadow-lg hover:scale-105 transition-transform text-xs no-underline text-center">RESGATAR MEU TESTE</a>
+                        <div class="flex items-center gap-2 text-white/70 text-[10px] font-bold uppercase">
+                            <i class="fas fa-shield-check"></i> Compra Segura
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Seleção de Destino / CTA Final -->
-        <section id="cta-options" class="px-4 py-16 bg-slate-50 border-t border-slate-100 text-center">
-            <div class="max-w-xl mx-auto space-y-8">
-                <h3 class="text-2xl font-black brand-blue uppercase italic">NeuroSilence™</h3>
-                <p class="text-slate-500 font-bold uppercase tracking-widest text-xs">⏳ Estoque Limitado | Frete Grátis nos Kits Selecionados</p>
-                <a href="https://mwebora.com/11784/99/3/?" class="w-full bg-brand-blue text-white py-6 rounded-2xl text-xl font-black shadow-2xl hover:bg-slate-800 transition-all flex items-center justify-center no-underline">👉 QUERO MEU DESCONTO AGORA</a>
-                <div class="flex justify-center gap-6 grayscale opacity-40">
-                    <i class="fab fa-cc-visa text-2xl"></i>
-                    <i class="fab fa-cc-mastercard text-2xl"></i>
-                    <i class="fab fa-cc-paypal text-2xl"></i>
+        <!-- CTA Final -->
+        <section class="px-6 py-12 bg-white text-center border-t border-slate-100">
+            <div class="max-w-lg mx-auto space-y-6">
+                <p class="text-slate-400 font-bold uppercase tracking-[0.2em] text-[10px]">Promoção de 73% OFF Válida Somente Hoje</p>
+                <a href="https://mwebora.com/11784/99/3/?" class="w-full block bg-brand-blue text-white py-5 rounded-2xl text-lg font-black shadow-2xl hover:bg-slate-800 transition-all no-underline">QUERO MEU DESCONTO DE 73% AGORA</a>
+                <div class="flex justify-center gap-6 grayscale opacity-30 text-xl">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-paypal"></i>
                 </div>
             </div>
         </section>
 
         <!-- Rodapé -->
-        <footer class="bg-slate-900 text-white/50 pt-20 pb-12 px-6">
+        <footer class="bg-slate-900 text-white/40 pt-16 pb-10 px-6">
             <div class="max-w-7xl mx-auto flex flex-col items-center">
-                <div class="mb-14 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-                    <span class="text-white text-3xl font-black tracking-tighter uppercase italic opacity-80">NeuroSilence™</span>
-                </div>
+                <span class="text-white/80 text-xl font-black tracking-tighter uppercase italic mb-10">NeuroSilence™</span>
 
-                <nav class="flex flex-wrap justify-center gap-x-10 gap-y-4 md:gap-x-14 md:gap-y-6 mb-16 text-[10px] md:text-[11px] font-black uppercase tracking-[0.25em]">
-                    <button onclick="openModal('privacy')" class="hover:text-white transition">Política de Privacidade</button>
-                    <button onclick="openModal('terms')" class="hover:text-white transition">Termos de Serviço</button>
-                    <button onclick="openModal('shipping')" class="hover:text-white transition">Envio</button>
-                    <button onclick="openModal('returns')" class="hover:text-white transition">Devoluções</button>
-                    <button onclick="openModal('contact')" class="hover:text-white transition">Contato</button>
+                <nav class="flex flex-wrap justify-center gap-x-6 gap-y-4 mb-12 text-[9px] font-black uppercase tracking-widest text-center">
+                    <button onclick="openModal('privacy')" class="hover:text-white">Privacidade</button>
+                    <button onclick="openModal('terms')" class="hover:text-white">Termos</button>
+                    <button onclick="openModal('returns')" class="hover:text-white">Garantia</button>
+                    <button onclick="openModal('contact')" class="hover:text-white text-brand-accent">Contato</button>
                 </nav>
                 
-                <div class="max-w-4xl text-center mb-16 opacity-30 text-[9px] md:text-[11px] leading-relaxed space-y-4 font-medium px-4">
-                    <p><strong>Aviso Médico:</strong> NeuroSilence é um suplemento alimentar. Resultados podem variar conforme o organismo. Este produto não se destina a diagnosticar, tratar, curar ou prevenir qualquer doença. Consulte seu médico antes de iniciar qualquer suplementação.</p>
-                    <p>Garantia de satisfação de 60 dias válida apenas no primeiro pedido. Envio direto dos EUA.</p>
-                    <p>© 2026 NeuroSilence™ Global Operations. Distribuidor Oficial Autorizado.</p>
-                </div>
-
-                <div class="pt-12 border-t border-white/5 w-full text-center flex flex-col items-center gap-4">
-                    <span class="text-[9px] md:text-[11px] uppercase font-black tracking-[0.4em] text-white/40">Pure Cognitive Harmony</span>
-                    <p class="text-[8px] md:text-[10px] text-white/20">18627 Brookhurst St #1300, Fountain Valley, CA 92708</p>
+                <div class="max-w-3xl text-center mb-10 opacity-40 text-[8px] md:text-[10px] leading-relaxed space-y-4">
+                    <p>NeuroSilence é um suplemento alimentar. Resultados variam. Este produto não substitui consulta médica.</p>
+                    <p>© 2026 NeuroSilence™ Global. Distribuidor Oficial. Envio dos EUA.</p>
                 </div>
             </div>
         </footer>
 
-        <!-- Modal de Informações -->
-        <div id="info-modal" class="fixed inset-0 bg-slate-900/95 z-[100] hidden items-center justify-center p-4 backdrop-blur-lg">
-            <div class="bg-white rounded-[2rem] shadow-2xl w-full max-w-3xl max-h-[85vh] flex flex-col relative">
-                <button onclick="closeModal()" class="absolute top-8 right-8 text-slate-300 hover:text-slate-900 transition">
-                    <i class="fas fa-times text-2xl"></i>
+        <!-- Modal -->
+        <div id="info-modal" class="fixed inset-0 bg-slate-900/90 z-[100] hidden items-center justify-center p-4 backdrop-blur-sm">
+            <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[80vh] flex flex-col relative">
+                <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-900">
+                    <i class="fas fa-times text-xl"></i>
                 </button>
-                <div id="modal-content" class="p-8 md:p-16 overflow-y-auto text-slate-700 leading-relaxed">
+                <div id="modal-content" class="p-8 overflow-y-auto text-slate-700 text-sm">
                     <!-- Dinâmico -->
-                </div>
-                <div class="p-8 border-t border-gray-100 bg-brand-accent/10 rounded-b-[2rem] flex justify-end">
-                    <button onclick="closeModal()" class="bg-brand-blue text-white px-10 py-4 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-slate-800 transition-all">Fechar</button>
                 </div>
             </div>
         </div>
 
     </div>
 
-    <!-- Scripts de Interface -->
+    <!-- Scripts -->
     <script type="text/javascript">
-        // Lógica do Carrossel Automático
+        // Carrossel Simples
         const track = document.getElementById('carouselTrack');
         const dots = document.querySelectorAll('#carouselDots div');
         let currentSlide = 0;
+        const totalSlides = 2;
 
         function updateCarousel() {
             track.style.transform = `translateX(-${currentSlide * 100}%)`;
             dots.forEach((dot, index) => {
                 dot.style.backgroundColor = index === currentSlide ? '#344269' : 'rgba(52, 66, 105, 0.2)';
-                dot.style.width = index === currentSlide ? '32px' : '10px';
+                dot.style.width = index === currentSlide ? '20px' : '8px';
             });
         }
 
         setInterval(() => {
-            currentSlide = (currentSlide + 1) % 5;
+            currentSlide = (currentSlide + 1) % totalSlides;
             updateCarousel();
-        }, 4000);
+        }, 5000);
 
         (function() {
-            const d = new Date();
-            const months = ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
-            // Data fixa conforme solicitado: 09 de Fevereiro de 2026
             document.getElementById('current-date').innerText = "09 DE FEVEREIRO DE 2026";
             updateCarousel();
         })();
 
         const modalData = {
-            'privacy': `<h2 class="text-3xl font-black mb-8 text-slate-900">Política de Privacidade</h2><p>Protegemos suas informações pessoais. Nenhuma informação de navegação é compartilhada com terceiros sem consentimento.</p>`,
-            'terms': `<h2 class="text-3xl font-black mb-8 text-slate-900">Termos de Serviço</h2><p>A compra de NeuroSilence implica na concordância com nossas políticas de envio e garantia de 60 dias.</p>`,
-            'shipping': `<h2 class="text-3xl font-black mb-8 text-slate-900">Envio</h2><p>Enviamos via prioridade internacional dos EUA. O tempo de entrega é estimado de acordo com o CEP de destino.</p>`,
-            'returns': `<h2 class="text-3xl font-black mb-8 text-slate-900">Garantia</h2><p>Se em 60 dias você não estiver satisfeito, basta solicitar o reembolso total enviando os frascos de volta.</p>`,
-            'contact': `<h2 class="text-3xl font-black mb-8 text-slate-900">Contato</h2><p>E-mail: suporte@neurosilence-global.com<br>Segunda a Sexta: 9h - 18h</p>`
+            'privacy': `<h2 class="text-xl font-black mb-4">Privacidade</h2><p>Garantimos a proteção total dos seus dados com criptografia SSL.</p>`,
+            'terms': `<h2 class="text-xl font-black mb-4">Termos</h2><p>Ao adquirir, você concorda com nossas políticas de envio internacional.</p>`,
+            'returns': `<h2 class="text-xl font-black mb-4">Garantia</h2><p>Você tem 60 dias para testar ou pedir seu dinheiro de volta.</p>`,
+            'contact': `<h2 class="text-xl font-black mb-4">Contato</h2><p>E-mail: suporte@neurosilence-global.com</p>`
         };
 
         function openModal(type) {
-            const modal = document.getElementById('info-modal');
-            const content = document.getElementById('modal-content');
-            content.innerHTML = modalData[type] || 'Conteúdo indisponível.';
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
+            document.getElementById('modal-content').innerHTML = modalData[type];
+            document.getElementById('info-modal').classList.remove('hidden');
+            document.getElementById('info-modal').classList.add('flex');
             document.body.style.overflow = 'hidden';
         }
 
         function closeModal() {
-            const modal = document.getElementById('info-modal');
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
+            document.getElementById('info-modal').classList.add('hidden');
+            document.getElementById('info-modal').classList.remove('flex');
             document.body.style.overflow = '';
         }
-
-        window.onclick = function(e) { if (e.target.id === 'info-modal') closeModal(); };
     </script>
 </body>
 </html>
