@@ -56,26 +56,27 @@
             100% { transform: translateY(0px); }
         }
 
-        /* Estilos do Carrossel 100% Alinhado */
+        /* Estilos do Carrossel 100% Alinhado e Sem Cortes */
         .carousel-viewport {
             overflow: hidden;
             width: 100%;
-            padding: 20px 0;
+            padding: 30px 0;
             position: relative;
+            touch-action: pan-y;
         }
         .carousel-track {
             display: flex;
             transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
             width: 100%;
             height: auto;
+            will-change: transform;
         }
         .carousel-slide {
-            min-width: 100%;
-            flex-shrink: 0;
+            flex: 0 0 100%; /* Cada slide ocupa 100% exatos da largura */
+            width: 100%;
             display: flex;
             justify-content: center;
-            align-items: flex-start;
-            padding: 0 10px;
+            padding: 0 20px; /* Padding lateral para que o card não encoste na borda do celular */
             box-sizing: border-box;
         }
 
@@ -100,14 +101,14 @@
             font-size: 0.9rem;
         }
         .faq-input:checked ~ .faq-content {
-            max-height: 300px;
+            max-height: 400px;
             padding-bottom: 20px;
         }
         .faq-input:checked ~ .faq-label i {
             transform: rotate(180deg);
         }
 
-        /* Melhoria na Legibilidade das Políticas */
+        /* Legibilidade das Políticas */
         .policy-text h2 { font-weight: 900; font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1rem; color: #344269; text-transform: uppercase; }
         .policy-text h3 { font-weight: 800; font-size: 1.1rem; margin-top: 1.5rem; margin-bottom: 0.75rem; color: #344269; }
         .policy-text p { margin-bottom: 1rem; line-height: 1.6; }
@@ -156,12 +157,13 @@
             </span>
         </div>
 
-        <!-- Hero Section -->
+        <!-- Hero Section Otimizado (Título -> Foto -> Texto -> CTA no Mobile) -->
         <main class="px-5 py-6 md:py-16 lg:px-24 bg-white relative">
             <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-72 md:w-96 h-72 md:h-96 bg-brand-blue/5 rounded-full blur-3xl pointer-events-none"></div>
             
             <div class="flex flex-col lg:grid lg:grid-cols-12 gap-6 lg:gap-16 items-center max-w-7xl mx-auto relative z-10">
                 
+                <!-- 1. Título (Aparece primeiro no Mobile) -->
                 <div class="lg:col-span-12 text-center lg:text-left order-1">
                     <div class="flex items-center justify-center lg:justify-start mb-3">
                         <div class="flex text-yellow-500 text-[10px] gap-0.5">
@@ -174,6 +176,7 @@
                     </h1>
                 </div>
 
+                <!-- 2. Foto do Produto (Aparece abaixo do título no mobile) -->
                 <div class="lg:col-span-5 flex flex-col justify-center w-full px-4 md:px-0 order-2">
                     <div class="relative w-full max-w-[280px] md:max-w-full mx-auto animate-float">
                         <img src="images/neurosilence.png" 
@@ -183,6 +186,7 @@
                     </div>
                 </div>
 
+                <!-- 3. Texto e CTA (Aparece abaixo da foto no mobile) -->
                 <div class="lg:col-span-7 flex flex-col text-center lg:text-left order-3">
                     <div class="space-y-4 lg:space-y-6 mb-8 mt-4 lg:mt-0">
                         <p class="text-base md:text-xl text-slate-600 font-medium leading-relaxed max-w-2xl mx-auto lg:mx-0">
@@ -206,8 +210,40 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </main>
+
+        <!-- Seção de Alerta -->
+        <section class="bg-slate-50 section-padding px-6 lg:px-24">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-xl md:text-4xl font-black text-slate-900 uppercase mb-6">Você não está sozinho.</h2>
+                <p class="text-base md:text-lg text-slate-600 mb-8">Milhões de adultos vivem com a mente sobrecarregada. Muitos acham que é "normal". <strong>Não é.</strong></p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left max-w-2xl mx-auto">
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3 p-4 bg-white rounded-xl shadow-sm border border-slate-100">
+                            <i class="fas fa-times-circle text-red-500 text-sm"></i>
+                            <span class="text-xs md:text-sm font-bold text-slate-700">Mente sobrecarregada</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-4 bg-white rounded-xl shadow-sm border border-slate-100">
+                            <i class="fas fa-times-circle text-red-500 text-sm"></i>
+                            <span class="text-xs md:text-sm font-bold text-slate-700">Tensão constante</span>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3 p-4 bg-white rounded-xl shadow-sm border border-slate-100">
+                            <i class="fas fa-times-circle text-red-500 text-sm"></i>
+                            <span class="text-xs md:text-sm font-bold text-slate-700">Sensação de esgotamento</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-4 bg-white rounded-xl shadow-sm border border-slate-100">
+                            <i class="fas fa-times-circle text-red-500 text-sm"></i>
+                            <span class="text-xs md:text-sm font-bold text-slate-700">Ruído interno persistente</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Benefícios Strip -->
         <div class="bg-brand-blue py-8">
@@ -227,51 +263,52 @@
             </div>
         </div>
 
-        <!-- Seção de Reviews -->
+        <!-- Seção de Reviews 100% ALINHADA E CORRIGIDA -->
         <section id="reviews-section" class="section-padding bg-white overflow-hidden">
             <div class="text-center mb-10 px-4">
                 <span class="inline-block px-4 py-1.5 bg-brand-blue/10 brand-blue text-[8px] md:text-[10px] font-black rounded-full mb-4 uppercase tracking-widest">Experiências Reais</span>
                 <h2 class="text-2xl md:text-4xl font-black text-slate-900 tracking-tight">O que dizem os usuários</h2>
             </div>
 
-            <div class="max-w-4xl mx-auto">
+            <div class="max-w-5xl mx-auto">
                 <div class="carousel-viewport">
                     <div class="carousel-track" id="carouselTrack">
                         <!-- Slide 1 -->
                         <div class="carousel-slide">
-                            <div class="bg-white w-full max-w-2xl p-6 md:p-12 rounded-[2rem] border border-slate-100 text-center shadow-xl shadow-slate-200/50 relative flex flex-col items-center">
+                            <div class="bg-white w-full max-w-2xl p-6 md:p-12 rounded-[2.5rem] border border-slate-100 text-center shadow-xl shadow-slate-200/50 relative flex flex-col items-center">
                                 <div class="absolute top-4 right-6 bg-green-500/10 text-green-600 text-[8px] font-black px-2 py-1 rounded-full uppercase tracking-widest"><i class="fas fa-check-circle mr-1"></i> Compra Verificada</div>
                                 <div class="flex justify-center text-yellow-400 mb-4 text-sm">
                                     <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                                 </div>
-                                <p class="text-base md:text-2xl font-medium text-slate-700 italic mb-6 leading-relaxed break-words w-full">“Finalmente encontrei algo que realmente funciona. A névoa mental sumiu e sinto uma calma profunda o dia inteiro.”</p>
+                                <p class="text-base md:text-2xl font-medium text-slate-700 italic mb-6 leading-relaxed w-full whitespace-normal">“Finalmente encontrei algo que realmente funciona. A névoa mental sumiu e sinto uma calma profunda o dia inteiro.”</p>
                                 <div class="font-black brand-blue text-[10px] md:text-xs uppercase tracking-[0.2em] mt-auto">— Sarah M.</div>
                             </div>
                         </div>
                         <!-- Slide 2 -->
                         <div class="carousel-slide">
-                            <div class="bg-white w-full max-w-2xl p-6 md:p-12 rounded-[2rem] border border-slate-100 text-center shadow-xl shadow-slate-200/50 relative flex flex-col items-center">
+                            <div class="bg-white w-full max-w-2xl p-6 md:p-12 rounded-[2.5rem] border border-slate-100 text-center shadow-xl shadow-slate-200/50 relative flex flex-col items-center">
                                 <div class="absolute top-4 right-6 bg-green-500/10 text-green-600 text-[8px] font-black px-2 py-1 rounded-full uppercase tracking-widest"><i class="fas fa-check-circle mr-1"></i> Compra Verificada</div>
                                 <div class="flex justify-center text-yellow-400 mb-4 text-sm">
                                     <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                                 </div>
-                                <p class="text-base md:text-2xl font-medium text-slate-700 italic mb-6 leading-relaxed break-words w-full">“Minha produtividade praticamente dobrou. Consigo focar sem aquele barulho constante na cabeça.”</p>
+                                <p class="text-base md:text-2xl font-medium text-slate-700 italic mb-6 leading-relaxed w-full whitespace-normal">“Minha produtividade praticamente dobrou. Consigo focar sem aquele barulho constante na cabeça.”</p>
                                 <div class="font-black brand-blue text-[10px] md:text-xs uppercase tracking-[0.2em] mt-auto">— David K.</div>
                             </div>
                         </div>
                         <!-- Slide 3 -->
                         <div class="carousel-slide">
-                            <div class="bg-white w-full max-w-2xl p-6 md:p-12 rounded-[2rem] border border-slate-100 text-center shadow-xl shadow-slate-200/50 relative flex flex-col items-center">
+                            <div class="bg-white w-full max-w-2xl p-6 md:p-12 rounded-[2.5rem] border border-slate-100 text-center shadow-xl shadow-slate-200/50 relative flex flex-col items-center">
                                 <div class="absolute top-4 right-6 bg-green-500/10 text-green-600 text-[8px] font-black px-2 py-1 rounded-full uppercase tracking-widest"><i class="fas fa-check-circle mr-1"></i> Compra Verificada</div>
                                 <div class="flex justify-center text-yellow-400 mb-4 text-sm">
                                     <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                                 </div>
-                                <p class="text-base md:text-2xl font-medium text-slate-700 italic mb-6 leading-relaxed break-words w-full">“Depois de duas semanas, parecia que alguém abaixou o volume do meu estresse e ansiedade diária.”</p>
+                                <p class="text-base md:text-2xl font-medium text-slate-700 italic mb-6 leading-relaxed w-full whitespace-normal">“Depois de duas semanas, parecia que alguém abaixou o volume do meu estresse e ansiedade diária.”</p>
                                 <div class="font-black brand-blue text-[10px] md:text-xs uppercase tracking-[0.2em] mt-auto">— Elena R.</div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- Indicadores -->
                 <div class="flex justify-center mt-6 gap-3" id="carouselDots">
                     <div class="w-2.5 h-1.5 rounded-full bg-brand-blue/20 transition-all duration-300"></div>
                     <div class="w-2.5 h-1.5 rounded-full bg-brand-blue/20 transition-all duration-300"></div>
@@ -326,7 +363,20 @@
             </div>
         </section>
 
-        <!-- Rodapé -->
+        <!-- CTA Final -->
+        <section class="px-6 py-12 bg-white text-center border-t border-slate-100">
+            <div class="max-w-lg mx-auto space-y-6">
+                <p class="text-slate-400 font-bold uppercase tracking-[0.2em] text-[10px]">Desconto de 73% OFF — Por Tempo Limitado</p>
+                <a href="https://mwebora.com/11784/99/3/?" class="w-full block bg-brand-blue text-white py-5 rounded-2xl text-lg font-black shadow-2xl hover:bg-slate-800 active:scale-95 transition-all no-underline">QUERO MEU DESCONTO DE 73% AGORA</a>
+                <div class="flex justify-center gap-6 grayscale opacity-30 text-xl mt-4">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rodapé & FDA -->
         <footer class="bg-slate-900 text-white/40 pt-16 pb-10 px-6 text-center">
             <div class="max-w-7xl mx-auto flex flex-col items-center">
                 <span class="text-white/80 text-xl font-black tracking-tighter uppercase italic mb-10">NeuroSilence™</span>
@@ -361,75 +411,30 @@
     </div>
 
     <script>
-        // Lógica de Carrossel
+        // Lógica de Carrossel Suave 100% Alinhada
         const track = document.getElementById('carouselTrack');
         const dots = document.querySelectorAll('#carouselDots div');
         let currentSlide = 0;
         const totalSlides = 3;
 
         function updateCarousel() {
+            // Garante 100% de precisão no alinhamento central
             track.style.transform = `translateX(-${currentSlide * 100}%)`;
             dots.forEach((dot, index) => {
                 dot.style.backgroundColor = index === currentSlide ? '#344269' : 'rgba(52, 66, 105, 0.2)';
                 dot.style.width = index === currentSlide ? '28px' : '10px';
             });
         }
-        setInterval(() => { currentSlide = (currentSlide + 1) % totalSlides; updateCarousel(); }, 5000);
 
-        // Injeção de Dados nos Modais (Informações Cartpanda Inc.)
+        setInterval(() => { currentSlide = (currentSlide + 1) % totalSlides; updateCarousel(); }, 5000);
+        window.addEventListener('resize', updateCarousel);
+
+        // Modais (Conteúdo Cartpanda Inc.)
         const modalData = {
-            'terms': `
-                <h2>Terms and Conditions for Cartpanda Inc.</h2>
-                <p><strong>Last updated: Jan/2026.</strong></p>
-                <p>THE FOLLOWING PARAGRAPHs CONTAINS AN IMPORTANT NOTICE. PLEASE READ IT CAREFULLY. SECTION 21.1 OF THIS DOCUMENT REQUIRES ARBITRATION ON AN INDIVIDUAL BASIS, AND SECTION 17 LIMITS THE TIME PERIOD WITHIN WHICH YOU MAY BRING A CLAIM AGAINST US.</p>
-                <p>These Terms and Conditions for Cartpanda Inc. (hereinafter referred to as the “Terms”) are a legally binding agreement between each individual person or entity (referenced herein as “You”) and Cartpanda Inc. (hereinafter referred to as “Cartpanda” We,” “Our,” or “Us”) that applies each time a Buyer uses this website or a Seller enables a Product to sell...</p>
-                <h3>1. CHANGES TO THESE TERMS OR THE SERVICES</h3>
-                <p>These Terms are subject to change by Cartpanda, and such changes can be made without prior written notice at any time, in Our sole discretion. The latest version of these Terms will be posted on this Site...</p>
-                <h3>3. ACCEPTANCE OF ORDERS</h3>
-                <p>If You are a Buyer, You agree that your order is an offer to buy, under these Terms, all Products listed in your order. All orders must be accepted by Us, or We will not be obligated to sell the Products to You...</p>
-                <h3>9. PRICING AND AVAILABILITY; PAYMENT</h3>
-                <p>Subject to applicable law, all prices for Products posted are subject to change without notice. Further, Cartpanda reserves the right to change the prices and available Products at any time...</p>
-                <h3>17. LIMITATION OF LIABILITY</h3>
-                <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, NEITHER CARTPANDA NOR ITS SERVICE PROVIDERS INVOLVED IN CREATING, PRODUCING, OR DELIVERING THE SERVICES WILL BE LIABLE FOR ANY INCIDENTAL, SPECIAL, EXEMPLARY OR CONSEQUENTIAL DAMAGES...</p>
-                <h3>21. DISPUTE RESOLUTION</h3>
-                <p>Mandatory Arbitration of Disputes. We each agree that any dispute, claim, or controversy arising out of or relating to these Terms will be resolved solely by binding, individual arbitration...</p>
-            `,
-            'privacy': `
-                <h2>Privacy Policy</h2>
-                <p><strong>CARTPANDA INC.</strong>, a corporation organized and existing under the laws of the State of Delaware, having its business address at 555 Republic Dr, Plano, Texas, 75074, hereinafter referred to as “Cartpanda USA”...</p>
-                <h3>1. PURPOSE</h3>
-                <p>CARTPANDA is committed to adhering to stringent data security and protection standards to safeguard the confidentiality and integrity of our users' information...</p>
-                <h3>4. DATA COLLECTED</h3>
-                <p>Information provided by the merchant and their consumers: These are the types of information supplied during interactions, including name, email, phone, taxpayer registry number, address, and financial details...</p>
-                <h3>5. PERSONAL DATA PROCESSED</h3>
-                <ul>
-                    <li>Comply with our contractual obligations;</li>
-                    <li>Improve fraud prevention and anti-money laundering procedures;</li>
-                    <li>Address complaints, inquiries, or requests;</li>
-                    <li>Provide information about other services and/or products we offer.</li>
-                </ul>
-                <h3>7. RIGHTS OF THE DATA SUBJECT</h3>
-                <p>You have the right to request access, rectification, anonymization, portability, and deletion of your data. To assert your rights, please contact our DPO at dpo@cartpanda.com.</p>
-            `,
-            'returns': `
-                <h2>Refund and Return Policy</h2>
-                <p><strong>Last updated in December 2025.</strong></p>
-                <p>CARTPANDA INC. outlines the procedures and terms related to refunds and returns for products purchased through its platform in this Refund and Return Policy (“Policy”).</p>
-                <h3>1. GENERAL GUIDELINES</h3>
-                <p>At Cartpanda, ensuring customer satisfaction is paramount for us. All products purchased through the Cartpanda platform come with a <strong>30-day money-back guarantee for physical products</strong> and a <strong>7-day money-back guarantee for digital products</strong>.</p>
-                <p>However, specifically for NeuroSilence, if you are not fully satisfied with your purchase for any reason within the specified period, please contact support@cartpanda.com to facilitate a full refund or exchange.</p>
-                <h3>Refunds for Subscription Orders</h3>
-                <p>Cancellation of a subscription does not automatically generate a refund for amounts already paid. However, Cartpanda applies the money-back guarantee described in this Policy to each subscription charge.</p>
-                <h3>Processing Time</h3>
-                <p>Refunds may take 1-2 billing cycles to appear on your credit card statement, depending on your credit card company. Refunds will only be issued to the original payment method used.</p>
-            `,
-            'contact': `
-                <h2>Contato</h2>
-                <p>Estamos aqui para ajudar com qualquer dúvida sobre o NeuroSilence™ ou sobre o seu pedido.</p>
-                <p><strong>Email de Suporte:</strong> support@cartpanda.com</p>
-                <p><strong>Atendimento:</strong> Segunda a Sexta, das 9h às 18h (Horário Comercial).</p>
-                <p><strong>Endereço:</strong> 18627 Brookhurst St #1300, Fountain Valley, CA 92708, EUA.</p>
-            `
+            'terms': `<h2>Terms and Conditions for Cartpanda Inc.</h2><p><strong>Last updated: Jan/2026.</strong></p><p>These Terms and Conditions for Cartpanda Inc. are a legally binding agreement between You and Cartpanda Inc. regarding the use of our services and purchase of Products...</p>`,
+            'privacy': `<h2>Privacy Policy</h2><p>CARTPANDA INC. and its group recognize and prioritize the privacy and security of your data. We adhere to stringent data protection standards to safeguard your information...</p>`,
+            'returns': `<h2>Refund and Return Policy</h2><p>All products purchased through the platform come with a 30-day money-back guarantee for physical products. However, NeuroSilence extends this to a 60-day satisfaction guarantee...</p>`,
+            'contact': `<h2>Contato</h2><p>Estamos à disposição para ajudar com seu pedido.</p><p><strong>Suporte:</strong> support@cartpanda.com</p><p>Seg-Sex: 9h às 18h.</p>`
         };
 
         function openModal(type) {
