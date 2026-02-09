@@ -32,8 +32,8 @@
         .bg-brand-accent { background-color: #678FD3; }
         
         .headline-fluid {
-            font-size: clamp(1.75rem, 8vw, 3.5rem);
-            line-height: 1.1;
+            font-size: clamp(1.85rem, 8vw, 3.8rem);
+            line-height: 1.05;
         }
 
         .cta-pulse {
@@ -56,7 +56,7 @@
             100% { transform: translateY(0px); }
         }
 
-        /* Estilos do Carrossel Otimizado */
+        /* Estilos do Carrossel Corrigidos */
         .carousel-viewport {
             overflow: hidden;
             width: 100%;
@@ -70,8 +70,10 @@
         .carousel-slide {
             min-width: 100%;
             flex-shrink: 0;
-            padding: 0 15px;
+            padding: 0 10px;
             box-sizing: border-box;
+            display: flex;
+            justify-content: center;
         }
 
         /* Estilos FAQ Acordeão */
@@ -95,7 +97,7 @@
             font-size: 0.9rem;
         }
         .faq-input:checked ~ .faq-content {
-            max-height: 200px;
+            max-height: 250px;
             padding-bottom: 20px;
         }
         .faq-input:checked ~ .faq-label i {
@@ -140,29 +142,42 @@
         <!-- Faixa de Oferta -->
         <div class="bg-white text-brand-blue text-center py-2 px-2 w-full border-b border-slate-100">
             <span class="text-[9px] sm:text-[11px] font-black uppercase tracking-[0.15em]">
-                ⚡ Flash Sale: 73% OFF — VÁLIDO ATÉ <span id="current-date" class="border-b-2 border-[#344269]/20">HOJE</span>
+                ⚡ Flash Sale: 73% OFF — <span id="current-date" class="border-b-2 border-[#344269]/20">VÁLIDO SOMENTE HOJE</span>
             </span>
         </div>
 
-        <!-- Hero Section -->
-        <main class="px-5 py-8 md:py-16 lg:px-24 bg-white relative">
+        <!-- Hero Section Otimizado (Mobile Order: Título -> Foto -> Texto -> CTA) -->
+        <main class="px-5 py-6 md:py-16 lg:px-24 bg-white relative">
             <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-72 md:w-96 h-72 md:h-96 bg-brand-blue/5 rounded-full blur-3xl pointer-events-none"></div>
             
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center max-w-7xl mx-auto relative z-10">
+            <div class="flex flex-col lg:grid lg:grid-cols-12 gap-6 lg:gap-16 items-center max-w-7xl mx-auto relative z-10">
                 
-                <div class="lg:col-span-7 flex flex-col text-center lg:text-left order-1 lg:order-2">
-                    <div class="flex items-center justify-center lg:justify-start mb-4">
+                <!-- 1. Título (Aparece primeiro no Mobile) -->
+                <div class="lg:col-span-12 text-center lg:text-left order-1">
+                    <div class="flex items-center justify-center lg:justify-start mb-3">
                         <div class="flex text-yellow-500 text-[10px] gap-0.5">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
                         <span class="ml-2 text-slate-400 font-bold text-[8px] uppercase tracking-widest">Fórmula Natural Premium • 15.000+ Usuários</span>
                     </div>
-
-                    <h1 class="headline-fluid font-black text-slate-900 tracking-tight mb-6">
+                    <h1 class="headline-fluid font-black text-slate-900 tracking-tight mb-2 lg:mb-6">
                         Finalmente, Desligue o <br class="hidden sm:block"><span class="brand-blue italic">Barulho na Cabeça.</span>
                     </h1>
+                </div>
 
-                    <div class="space-y-4 lg:space-y-6 mb-8">
+                <!-- 2. Foto do Produto (Aparece abaixo do título no mobile) -->
+                <div class="lg:col-span-5 flex flex-col justify-center w-full px-4 md:px-0 order-2">
+                    <div class="relative w-full max-w-[280px] md:max-w-full mx-auto animate-float">
+                        <img src="images/neurosilence.png" 
+                             onerror="this.src='https://placehold.co/800x1000/344269/FFFFFF?text=NeuroSilence'" 
+                             class="w-full h-auto drop-shadow-2xl" 
+                             alt="NeuroSilence Product">
+                    </div>
+                </div>
+
+                <!-- 3. Texto e CTA (Aparece abaixo da foto no mobile) -->
+                <div class="lg:col-span-7 flex flex-col text-center lg:text-left order-3">
+                    <div class="space-y-4 lg:space-y-6 mb-8 mt-4 lg:mt-0">
                         <p class="text-base md:text-xl text-slate-600 font-medium leading-relaxed max-w-2xl mx-auto lg:mx-0">
                             Se você vive cansado, irritado ou com a mente acelerada, <span class="brand-blue font-bold">isso não é fraqueza.</span> Seu sistema nervoso pode estar preso em modo de alerta.
                         </p>
@@ -180,19 +195,11 @@
                         </a>
                         <div class="flex items-center justify-center lg:justify-start gap-2 text-slate-400">
                             <i class="fas fa-shield-lock text-[10px]"></i>
-                            <p class="text-[8px] font-bold uppercase tracking-widest">Pagamento 100% Seguro</p>
+                            <p class="text-[8px] font-bold uppercase tracking-widest text-center">Pagamento 100% Seguro • Envio Imediato</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="lg:col-span-5 flex flex-col justify-center order-2 lg:order-1 px-4 md:px-0">
-                    <div class="relative w-full max-w-[320px] md:max-w-full mx-auto animate-float">
-                        <img src="images/neurosilence.png" 
-                             onerror="this.src='https://placehold.co/800x1000/344269/FFFFFF?text=NeuroSilence'" 
-                             class="w-full h-auto drop-shadow-2xl" 
-                             alt="NeuroSilence Product">
-                    </div>
-                </div>
             </div>
         </main>
 
@@ -229,7 +236,7 @@
 
         <!-- Benefícios Strip -->
         <div class="bg-brand-blue py-8">
-            <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
                 <div class="flex items-center justify-center gap-4 text-white">
                     <i class="fas fa-brain text-xl opacity-50"></i>
                     <span class="text-[10px] md:text-xs font-black uppercase tracking-widest">Restaura Clareza</span>
@@ -245,7 +252,7 @@
             </div>
         </div>
 
-        <!-- Seção de Reviews Otimizada -->
+        <!-- Seção de Reviews Corrigida -->
         <section id="reviews-section" class="section-padding bg-white overflow-hidden">
             <div class="text-center mb-10 px-4">
                 <span class="inline-block px-4 py-1.5 bg-brand-blue/10 brand-blue text-[8px] md:text-[10px] font-black rounded-full mb-4 uppercase tracking-widest">Experiências Reais</span>
@@ -257,38 +264,35 @@
                     <div class="carousel-track" id="carouselTrack">
                         <!-- Slide 1 -->
                         <div class="carousel-slide">
-                            <div class="bg-white p-8 md:p-12 rounded-[2rem] border border-slate-100 text-center shadow-xl shadow-slate-200/50 relative h-full flex flex-col justify-center">
-                                <div class="absolute top-6 right-8 bg-green-500/10 text-green-600 text-[8px] font-black px-2 py-1 rounded-full uppercase tracking-widest"><i class="fas fa-check-circle mr-1"></i> Compra Verificada</div>
-                                <i class="fas fa-quote-left absolute top-6 left-8 text-brand-blue/10 text-4xl md:text-6xl"></i>
+                            <div class="bg-white w-full max-w-2xl p-6 md:p-12 rounded-[2rem] border border-slate-100 text-center shadow-xl shadow-slate-200/50 relative">
+                                <div class="absolute top-4 right-6 bg-green-500/10 text-green-600 text-[7px] md:text-[8px] font-black px-2 py-1 rounded-full uppercase tracking-widest"><i class="fas fa-check-circle mr-1"></i> Compra Verificada</div>
                                 <div class="flex justify-center text-yellow-400 mb-6 text-xs md:text-sm">
                                     <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                                 </div>
-                                <p class="text-base md:text-2xl font-medium text-slate-700 italic mb-8 leading-relaxed">“Finalmente encontrei algo que realmente funciona. A névoa mental sumiu e sinto uma calma profunda o dia inteiro.”</p>
-                                <div class="font-black brand-blue text-[10px] md:text-xs uppercase tracking-[0.2em]">— Sarah M.</div>
+                                <p class="text-sm md:text-2xl font-medium text-slate-700 italic mb-8 leading-relaxed whitespace-normal break-words">“Finalmente encontrei algo que realmente funciona. A névoa mental sumiu e sinto uma calma profunda o dia inteiro.”</p>
+                                <div class="font-black brand-blue text-[9px] md:text-xs uppercase tracking-[0.2em]">— Sarah M.</div>
                             </div>
                         </div>
                         <!-- Slide 2 -->
                         <div class="carousel-slide">
-                            <div class="bg-white p-8 md:p-12 rounded-[2rem] border border-slate-100 text-center shadow-xl shadow-slate-200/50 relative h-full flex flex-col justify-center">
-                                <div class="absolute top-6 right-8 bg-green-500/10 text-green-600 text-[8px] font-black px-2 py-1 rounded-full uppercase tracking-widest"><i class="fas fa-check-circle mr-1"></i> Compra Verificada</div>
-                                <i class="fas fa-quote-left absolute top-6 left-8 text-brand-blue/10 text-4xl md:text-6xl"></i>
+                            <div class="bg-white w-full max-w-2xl p-6 md:p-12 rounded-[2rem] border border-slate-100 text-center shadow-xl shadow-slate-200/50 relative">
+                                <div class="absolute top-4 right-6 bg-green-500/10 text-green-600 text-[7px] md:text-[8px] font-black px-2 py-1 rounded-full uppercase tracking-widest"><i class="fas fa-check-circle mr-1"></i> Compra Verificada</div>
                                 <div class="flex justify-center text-yellow-400 mb-6 text-xs md:text-sm">
                                     <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                                 </div>
-                                <p class="text-base md:text-2xl font-medium text-slate-700 italic mb-8 leading-relaxed">“Minha produtividade praticamente dobrou. Consigo focar sem aquele barulho constante na cabeça.”</p>
-                                <div class="font-black brand-blue text-[10px] md:text-xs uppercase tracking-[0.2em]">— David K.</div>
+                                <p class="text-sm md:text-2xl font-medium text-slate-700 italic mb-8 leading-relaxed whitespace-normal break-words">“Minha produtividade praticamente dobrou. Consigo focar sem aquele barulho constante na cabeça.”</p>
+                                <div class="font-black brand-blue text-[9px] md:text-xs uppercase tracking-[0.2em]">— David K.</div>
                             </div>
                         </div>
                         <!-- Slide 3 -->
                         <div class="carousel-slide">
-                            <div class="bg-white p-8 md:p-12 rounded-[2rem] border border-slate-100 text-center shadow-xl shadow-slate-200/50 relative h-full flex flex-col justify-center">
-                                <div class="absolute top-6 right-8 bg-green-500/10 text-green-600 text-[8px] font-black px-2 py-1 rounded-full uppercase tracking-widest"><i class="fas fa-check-circle mr-1"></i> Compra Verificada</div>
-                                <i class="fas fa-quote-left absolute top-6 left-8 text-brand-blue/10 text-4xl md:text-6xl"></i>
+                            <div class="bg-white w-full max-w-2xl p-6 md:p-12 rounded-[2rem] border border-slate-100 text-center shadow-xl shadow-slate-200/50 relative">
+                                <div class="absolute top-4 right-6 bg-green-500/10 text-green-600 text-[7px] md:text-[8px] font-black px-2 py-1 rounded-full uppercase tracking-widest"><i class="fas fa-check-circle mr-1"></i> Compra Verificada</div>
                                 <div class="flex justify-center text-yellow-400 mb-6 text-xs md:text-sm">
                                     <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                                 </div>
-                                <p class="text-base md:text-2xl font-medium text-slate-700 italic mb-8 leading-relaxed">“Depois de duas semanas, parecia que alguém abaixou o volume do meu estresse e ansiedade.”</p>
-                                <div class="font-black brand-blue text-[10px] md:text-xs uppercase tracking-[0.2em]">— Elena R.</div>
+                                <p class="text-sm md:text-2xl font-medium text-slate-700 italic mb-8 leading-relaxed whitespace-normal break-words">“Depois de duas semanas, parecia que alguém abaixou o volume do meu estresse e ansiedade.”</p>
+                                <div class="font-black brand-blue text-[9px] md:text-xs uppercase tracking-[0.2em]">— Elena R.</div>
                             </div>
                         </div>
                     </div>
@@ -302,34 +306,34 @@
             </div>
         </section>
 
-        <!-- FAQ Section -->
+        <!-- FAQ Section Simplificada -->
         <section class="section-padding bg-slate-50 px-6 lg:px-24 border-y border-slate-100">
             <div class="max-w-3xl mx-auto">
                 <div class="text-center mb-12">
-                    <span class="text-brand-blue font-black uppercase text-[10px] tracking-widest bg-brand-blue/5 px-4 py-1 rounded-full">Dúvidas Frequentes</span>
-                    <h2 class="text-2xl md:text-4xl font-black text-slate-900 mt-4">Perguntas comuns</h2>
+                    <span class="text-brand-blue font-black uppercase text-[10px] tracking-widest bg-brand-blue/5 px-4 py-1 rounded-full">FAQ</span>
+                    <h2 class="text-2xl md:text-4xl font-black text-slate-900 mt-4">Perguntas Frequentes</h2>
                 </div>
 
                 <div class="space-y-2">
                     <div class="faq-item">
                         <input type="checkbox" id="faq1" class="faq-input">
-                        <label for="faq1" class="faq-label">NeuroSilence é seguro? <i class="fas fa-chevron-down text-xs opacity-30"></i></label>
-                        <div class="faq-content">Sim. Nossa fórmula é 100% natural, não causa dependência e é produzida seguindo rigorosos padrões de qualidade nos EUA.</div>
+                        <label for="faq1" class="faq-label text-sm md:text-base">NeuroSilence é seguro? <i class="fas fa-chevron-down text-xs opacity-30"></i></label>
+                        <div class="faq-content text-xs md:text-sm">Sim. Nossa fórmula é 100% natural, não causa dependência e é produzida seguindo rigorosos padrões de qualidade nos EUA.</div>
                     </div>
                     <div class="faq-item">
                         <input type="checkbox" id="faq2" class="faq-input">
-                        <label for="faq2" class="faq-label">Como devo tomar? <i class="fas fa-chevron-down text-xs opacity-30"></i></label>
-                        <div class="faq-content">Recomendamos o uso diário conforme as instruções no frasco, preferencialmente pela manhã para suporte cognitivo ao longo do dia.</div>
+                        <label for="faq2" class="faq-label text-sm md:text-base">Como devo tomar? <i class="fas fa-chevron-down text-xs opacity-30"></i></label>
+                        <div class="faq-content text-xs md:text-sm">Recomendamos o uso diário conforme as instruções no frasco, preferencialmente pela manhã para suporte cognitivo ao longo do dia.</div>
                     </div>
                     <div class="faq-item">
                         <input type="checkbox" id="faq3" class="faq-input">
-                        <label for="faq3" class="faq-label">Quanto tempo leva para sentir os efeitos? <i class="fas fa-chevron-down text-xs opacity-30"></i></label>
-                        <div class="faq-content">Muitos usuários relatam uma sensação de calma e foco nos primeiros dias, mas os melhores resultados são observados com o uso contínuo por pelo menos 30 a 60 dias.</div>
+                        <label for="faq3" class="faq-label text-sm md:text-base">Quanto tempo leva para sentir os efeitos? <i class="fas fa-chevron-down text-xs opacity-30"></i></label>
+                        <div class="faq-content text-xs md:text-sm">Muitos usuários relatam uma sensação de calma e foco nos primeiros dias, mas os melhores resultados são observados com o uso contínuo por pelo menos 30 a 60 dias.</div>
                     </div>
                     <div class="faq-item">
                         <input type="checkbox" id="faq4" class="faq-input">
-                        <label for="faq4" class="faq-label">E se não funcionar para mim? <i class="fas fa-chevron-down text-xs opacity-30"></i></label>
-                        <div class="faq-content">Você está protegido pela nossa garantia de 60 dias. Se não estiver satisfeito, devolvemos seu dinheiro integralmente.</div>
+                        <label for="faq4" class="faq-label text-sm md:text-base">E se não funcionar para mim? <i class="fas fa-chevron-down text-xs opacity-30"></i></label>
+                        <div class="faq-content text-xs md:text-sm">Você está protegido pela nossa garantia de 60 dias. Se não estiver satisfeito, devolvemos seu dinheiro integralmente.</div>
                     </div>
                 </div>
             </div>
@@ -346,7 +350,7 @@
                 </div>
                 <div class="space-y-4 md:space-y-6">
                     <h2 class="text-2xl md:text-4xl font-black text-white leading-tight">Garantia Total de 60 Dias — Risco Zero</h2>
-                    <p class="text-white/90 text-base md:text-xl leading-relaxed">Teste NeuroSilence por 60 dias. Se não sentir a mudança, devolvemos 100% do seu dinheiro. <strong>Mesmo com os frascos vazios.</strong></p>
+                    <p class="text-white/90 text-sm md:text-xl leading-relaxed">Teste NeuroSilence por 60 dias. Se não sentir a mudança, devolvemos 100% do seu dinheiro. <strong>Mesmo com os frascos vazios.</strong> Sem burocracia.</p>
                     
                     <div class="flex flex-col sm:flex-row gap-4 pt-2 items-center md:items-start">
                         <a href="https://mwebora.com/11784/99/3/?" class="w-full sm:w-auto bg-white text-brand-blue px-10 py-4 rounded-xl font-black uppercase tracking-widest shadow-lg hover:scale-105 transition-transform text-xs no-underline text-center">RESGATAR MEU TESTE</a>
@@ -361,9 +365,9 @@
         <!-- CTA Final -->
         <section class="px-6 py-12 bg-white text-center border-t border-slate-100">
             <div class="max-w-lg mx-auto space-y-6">
-                <p class="text-slate-400 font-bold uppercase tracking-[0.2em] text-[10px]">Desconto de 73% Válido Somente Hoje</p>
+                <p class="text-slate-400 font-bold uppercase tracking-[0.2em] text-[10px]">Desconto de 73% OFF — Por Tempo Limitado</p>
                 <a href="https://mwebora.com/11784/99/3/?" class="w-full block bg-brand-blue text-white py-5 rounded-2xl text-lg font-black shadow-2xl hover:bg-slate-800 active:scale-95 transition-all no-underline">QUERO MEU DESCONTO DE 73% AGORA</a>
-                <div class="flex justify-center gap-6 grayscale opacity-30 text-xl">
+                <div class="flex justify-center gap-6 grayscale opacity-30 text-xl mt-4">
                     <i class="fab fa-cc-visa"></i>
                     <i class="fab fa-cc-mastercard"></i>
                     <i class="fab fa-cc-paypal"></i>
@@ -372,20 +376,19 @@
         </section>
 
         <!-- Rodapé & FDA -->
-        <footer class="bg-slate-900 text-white/40 pt-16 pb-10 px-6">
+        <footer class="bg-slate-900 text-white/40 pt-16 pb-10 px-6 text-center">
             <div class="max-w-7xl mx-auto flex flex-col items-center">
                 <span class="text-white/80 text-xl font-black tracking-tighter uppercase italic mb-10">NeuroSilence™</span>
 
-                <nav class="flex flex-wrap justify-center gap-x-6 gap-y-4 mb-12 text-[9px] font-black uppercase tracking-widest text-center">
+                <nav class="flex flex-wrap justify-center gap-x-6 gap-y-4 mb-12 text-[9px] font-black uppercase tracking-widest">
                     <button onclick="openModal('privacy')" class="hover:text-white">Privacidade</button>
                     <button onclick="openModal('terms')" class="hover:text-white">Termos</button>
                     <button onclick="openModal('returns')" class="hover:text-white">Garantia</button>
                     <button onclick="openModal('contact')" class="hover:text-white text-brand-accent">Contato</button>
                 </nav>
                 
-                <!-- FDA Mandatory Disclaimer (EN/PT) -->
                 <div class="max-w-4xl text-center mb-10 border-t border-white/5 pt-10 px-4">
-                    <p class="text-[9px] md:text-[10px] uppercase font-bold text-white/30 mb-4 tracking-widest">Aviso Regulatório / Regulatory Notice</p>
+                    <p class="text-[9px] uppercase font-bold text-white/30 mb-4 tracking-widest">Aviso Regulatório / Regulatory Notice</p>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-[8px] md:text-[9px] leading-relaxed text-center md:text-left opacity-40">
                         <p><strong>EN:</strong> These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Consult your physician before starting any supplementation.</p>
                         <p><strong>PT:</strong> Estas declarações não foram avaliadas pela Food and Drug Administration (FDA). Este produto não se destina a diagnosticar, tratar, curar ou prevenir qualquer doença. Consulte seu médico antes de iniciar qualquer suplementação.</p>
@@ -393,7 +396,7 @@
                 </div>
 
                 <div class="text-center max-w-3xl opacity-20 text-[8px] md:text-[9px] leading-relaxed">
-                    <p>© 2026 NeuroSilence™ Global. Distribuidor Oficial Autorizado. 18627 Brookhurst St #1300, Fountain Valley, CA 92708. Envio direto dos EUA para destinos internacionais.</p>
+                    <p>© 2026 NeuroSilence™ Global. Distribuidor Oficial Autorizado. 18627 Brookhurst St #1300, Fountain Valley, CA 92708. Envio direto dos EUA.</p>
                 </div>
             </div>
         </footer>
@@ -414,7 +417,7 @@
 
     <!-- Scripts -->
     <script type="text/javascript">
-        // Lógica de Carrossel
+        // Lógica de Carrossel Suave
         const track = document.getElementById('carouselTrack');
         const dots = document.querySelectorAll('#carouselDots div');
         let currentSlide = 0;
@@ -434,15 +437,15 @@
         }, 5000);
 
         (function() {
-            document.getElementById('current-date').innerText = "09 DE FEVEREIRO DE 2026";
+            document.getElementById('current-date').innerText = "VÁLIDO SOMENTE HOJE";
             updateCarousel();
         })();
 
         const modalData = {
-            'privacy': `<h2 class="text-xl font-black mb-4">Privacidade</h2><p>Garantimos a proteção total dos seus dados com criptografia SSL. Nenhuma informação é vendida a terceiros.</p>`,
-            'terms': `<h2 class="text-xl font-black mb-4">Termos</h2><p>As compras internacionais estão sujeitas às leis do país de origem (EUA) e taxas locais conforme o destino.</p>`,
-            'returns': `<h2 class="text-xl font-black mb-4">Garantia</h2><p>A satisfação é garantida por 60 dias. O reembolso é processado após o recebimento dos frascos conforme política vigente.</p>`,
-            'contact': `<h2 class="text-xl font-black mb-4">Contato</h2><p>E-mail: suporte@neurosilence-global.com<br>Resposta em até 24h úteis.</p>`
+            'privacy': `<h2 class="text-xl font-black mb-4 text-brand-blue">Privacidade</h2><p>Garantimos a proteção total dos seus dados com criptografia SSL. Nenhuma informação é vendida a terceiros.</p>`,
+            'terms': `<h2 class="text-xl font-black mb-4 text-brand-blue">Termos</h2><p>As compras internacionais estão sujeitas às leis do país de origem (EUA) e taxas locais conforme o destino.</p>`,
+            'returns': `<h2 class="text-xl font-black mb-4 text-brand-blue">Garantia</h2><p>A satisfação é garantida por 60 dias. O reembolso é processado após o recebimento dos frascos conforme política vigente.</p>`,
+            'contact': `<h2 class="text-xl font-black mb-4 text-brand-blue">Contato</h2><p>E-mail: suporte@neurosilence-global.com<br>Resposta em até 24h úteis.</p>`
         };
 
         function openModal(type) {
